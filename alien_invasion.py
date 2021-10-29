@@ -172,8 +172,13 @@ class AlienInvasion:
             self.settings.increase_speed()
 
             # 提高等级。
-            self.stats.level += 1
-            self.sb.prep_level()
+            self._start_new_level()
+
+    def _start_new_level(self):
+        """当外星人被全部消灭时，提高等级。"""
+        # 提高等级。
+        self.stats.level += 1
+        self.sb.prep_level()
 
     def _create_fleet(self):
         """创建外星人群。"""
